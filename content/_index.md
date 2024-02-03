@@ -98,7 +98,8 @@ sections:
           location: Cambridge, MA
           date_start: '2022-01-01'
           date_end: '2022-06-01'
-          description: nothing yet
+          description: Studied **Spectral density estimation** and Kernel Polynomial Methods with Dr Andrew Horning. 
+        - title: Undergraduate Researcher
           company: Massachusetts Institute of Technology
           company_url: ''
           company_logo: org-x

@@ -98,8 +98,7 @@ sections:
           location: Cambridge, MA
           date_start: '2022-01-01'
           date_end: '2022-06-01'
-          description: Studied Spectral density estimation and Kernel Polynomial Methods with Dr Andrew Horning.  Developed a (new) result on the convergence of smooth random variables when trasnformed using Chebyshev Polynomials. Coded several new methods for spectral density estimation for large real symmetric matrices on Matlab and Python. Studied the appplicability of Hutch++ like methods to the spectral problem.
-    - title: Undergraduate Researcher
+          description: nothing yet
           company: Massachusetts Institute of Technology
           company_url: ''
           company_logo: org-x
@@ -108,7 +107,7 @@ sections:
           date_end: '2022-09-01'
           description: Studied two different problems in epidemic modelling. 
     design:
-      columns: '4'
+      columns: '2'
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.

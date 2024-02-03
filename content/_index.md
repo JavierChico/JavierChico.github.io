@@ -131,15 +131,7 @@ sections:
           organization_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
           title: MSci Governors prize in Mathematics.
           url: ''
-        - certificate_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
-          date_end: ''
-          date_start: '2021-08-01'
-          description: '
-          icon: edx
-          organization: Imperial College London
-          organization_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
-          title: G-RESEARCH prize for academic excellence
-          url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
+        
     design:
       columns: '2'
   - block: collection

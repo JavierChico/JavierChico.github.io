@@ -129,7 +129,7 @@ sections:
           icon: coursera
           organization: Imperial College London
           organization_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
-          title: MSci Governor's prize in Mathematics.
+          title: MSci Governors prize in Mathematics.
           url: ''
         - certificate_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
           date_end: ''

@@ -1,9 +1,9 @@
 ---
-title: Example Project
-summary: An example of using the in-built project page.
+title: Falling ferrofluids
+summary: Developed reduced order models to understand falling ferrofluids in the long wave limit. Obtained novel results when the ferrofluids are subject to stochastic currents
 tags:
-  - Deep Learning
-date: '2016-04-27T00:00:00Z'
+  - Fluid Dynamics, Imperial College London
+date: '2023-06-27T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -13,10 +13,6 @@ image:
   focal_point: Smart
 
 links:
-  - icon: twitter
-    icon_pack: fab
-    name: Follow
-    url: https://twitter.com/georgecushen
 url_code: ''
 url_pdf: ''
 url_slides: ''

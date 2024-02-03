@@ -83,6 +83,30 @@ sections:
           date_start: '2024-01-01'
           date_end: ''
           description: Viscous flow tutor.
+      - title: Peer Tutor
+          company: Imperial College London
+          company_url: ''
+          company_logo: org-x
+          location: London
+          date_start: '2022-10-01'
+          date_end: '2023-05-01'
+          description: Peer tutor for two groups of first year undergraduate students.
+    - title: Undergraduate Researcher
+          company: Massachusetts Institute of Technology
+          company_url: ''
+          company_logo: org-x
+          location: Cambridge, MA
+          date_start: '2022-01-01'
+          date_end: '2022-06-01'
+          description: Studied **Spectral density estimation** and Kernel Polynomial Methods with Dr Andrew Horning.  Developed a (new) result on the convergence of smooth random variables when trasnformed using Chebyshev Polynomials. Coded several new methods for spectral density estimation for large real symmetric matrices on Matlab and Python. Studied the appplicability of Hutch++ like methods to the spectral problem.
+    - title: Undergraduate Researcher
+          company: Massachusetts Institute of Technology
+          company_url: ''
+          company_logo: org-x
+          location: Remote
+          date_start: '2022-05-01'
+          date_end: '2022-09-01'
+          description: Studied two different problems in epidemic modelling. 
     design:
       columns: '2'
   - block: accomplishments

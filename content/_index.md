@@ -143,7 +143,7 @@ sections:
         
     design:
       columns: '2'
-  - block: collection
+  <!--- - block: collection
     id: posts
     content:
       title: Recent Posts
@@ -169,7 +169,7 @@ sections:
     design:
       # Choose a layout view
       view: compact
-      columns: '2'
+      columns: '2' --->
   - block: portfolio
     id: projects
     content:
@@ -207,7 +207,7 @@ sections:
     #    {{< gallery album="demo" >}}
    # design:
   #    columns: '1'
-  - block: collection
+  <!--- - block: collection
     id: featured
     content:
       title: Featured Publications
@@ -231,8 +231,8 @@ sections:
         exclude_featured: true
     design:
       columns: '2'
-      view: citation
-  - block: collection
+      view: citation --->
+  <!--- - block: collection
     id: talks
     content:
       title: Recent & Upcoming Talks
@@ -246,7 +246,7 @@ sections:
     content:
       title: Popular Topics
     design:
-      columns: '2'
+      columns: '2' --->
   - block: contact
     id: contact
     content:

@@ -1,6 +1,6 @@
 ---
 title: Falling ferrofluids
-summary: Developed reduced order models to understand falling ferrofluids in the long wave limit. Obtained novel results when the ferrofluids are subject to stochastic currents
+summary: Developed reduced order models to understand falling ferrofluids in the long wave limit. Obtained novel results when the ferrofluids are subject to stochastic currents.
 tags:
   - Fluid Dynamics, Imperial College London
 date: '2023-06-27T00:00:00Z'
@@ -14,7 +14,7 @@ image:
 
 links:
 url_code: ''
-url_pdf: ''
+url_pdf: content/project/example/M4R_report_Javi_final.pdf
 url_slides: ''
 url_video: ''
 

@@ -68,11 +68,6 @@ skills:
         percent: 70
         icon: database
         icon_pack: fas
-    - name: R
-        description: ''
-        percent: 50
-        icon: database
-        icon_pack: fas
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'

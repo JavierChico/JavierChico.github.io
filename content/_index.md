@@ -6,7 +6,7 @@ type: landing
 
 sections:
   - block: hero
-    demo: true # Only display this section in the Hugo Blox Builder demo site
+    demo: false # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Hugo Academic Theme
       image:
@@ -98,7 +98,7 @@ sections:
           location: Cambridge, MA
           date_start: '2022-01-01'
           date_end: '2022-06-01'
-          description: Studied **Spectral density estimation** and Kernel Polynomial Methods with Dr Andrew Horning.  Developed a (new) result on the convergence of smooth random variables when trasnformed using Chebyshev Polynomials. Coded several new methods for spectral density estimation for large real symmetric matrices on Matlab and Python. Studied the appplicability of Hutch++ like methods to the spectral problem.
+          description: Studied Spectral density estimation and Kernel Polynomial Methods with Dr Andrew Horning.  Developed a (new) result on the convergence of smooth random variables when trasnformed using Chebyshev Polynomials. Coded several new methods for spectral density estimation for large real symmetric matrices on Matlab and Python. Studied the appplicability of Hutch++ like methods to the spectral problem.
     - title: Undergraduate Researcher
           company: Massachusetts Institute of Technology
           company_url: ''
@@ -108,7 +108,7 @@ sections:
           date_end: '2022-09-01'
           description: Studied two different problems in epidemic modelling. 
     design:
-      columns: '2'
+      columns: '4'
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.

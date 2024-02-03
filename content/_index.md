@@ -6,7 +6,7 @@ type: landing
 
 sections:
   - block: hero
-    demo: false # Only display this section in the Hugo Blox Builder demo site
+    demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Hugo Academic Theme
       image:
@@ -187,10 +187,12 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: Fluid Dynamics
+          tag: Fluid Dynamics
+        - name: Imperial College London
+          tag: Imperial College London
+        - name: MIT
+          tag: MIT
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'

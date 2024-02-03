@@ -83,7 +83,7 @@ sections:
           date_start: '2024-01-01'
           date_end: ''
           description: Viscous flow tutor.
-      - title: Peer Tutor
+        - title: Peer Tutor
           company: Imperial College London
           company_url: ''
           company_logo: org-x
@@ -91,7 +91,7 @@ sections:
           date_start: '2022-10-01'
           date_end: '2023-05-01'
           description: Peer tutor for two groups of first year undergraduate students.
-    - title: Undergraduate Researcher
+        - title: Undergraduate Researcher
           company: Massachusetts Institute of Technology
           company_url: ''
           company_logo: org-x

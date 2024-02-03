@@ -86,7 +86,7 @@ sections:
         - title: Peer Tutor
           company: Imperial College London
           company_url: ''
-          company_logo: org-x
+          company_logo: imperial_logo
           location: London
           date_start: '2022-10-01'
           date_end: '2023-05-01'
@@ -94,7 +94,7 @@ sections:
         - title: Undergraduate Researcher
           company: Massachusetts Institute of Technology
           company_url: ''
-          company_logo: org-x
+          company_logo: MIT_logo
           location: Cambridge, MA
           date_start: '2022-01-01'
           date_end: '2022-06-01'
@@ -102,7 +102,7 @@ sections:
         - title: Undergraduate Researcher
           company: Massachusetts Institute of Technology
           company_url: ''
-          company_logo: org-x
+          company_logo: MIT_logo
           location: Remote
           date_start: '2022-05-01'
           date_end: '2022-09-01'
@@ -126,7 +126,7 @@ sections:
           date_end: ''
           date_start: '2023-09-01'
           description: Awarded to the best graduating student.
-          icon: coursera
+          icon: imperial_logo
           organization: Imperial College London
           organization_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
           title: MSci Governors prize in Mathematics.
@@ -135,7 +135,7 @@ sections:
           date_end: ''
           date_start: '2021-08-01'
           description: ''
-          icon: edx
+          icon: imperial_logo
           organization: Imperial College London
           organization_url: https://www.imperial.ac.uk/mathematics/undergraduate/undergraduate-prizes/
           title: G-RESEARCH prize for academic excellence

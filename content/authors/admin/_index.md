@@ -105,9 +105,6 @@ social:
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.com/citations?user=mxaKZ3kAAAAJ&hl=en&authuser=2&oi=ao
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/gcushen
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/javier-chico-vazquez/
@@ -123,5 +120,6 @@ highlight_name: true
 ---
 
 Javier Chico Vazquez is a DPhil at the Mathematical Institute in Oxford, under the supervision of Prof. Dominic Vella and Prof. Derek Moulton. In my research I use techniques from Applied Mathematics to model phenomena in the natural sciences, the weirder the topic the more interesting. If you have a topic suggestion feel free to contact me!
+
 I completed my BSc and MSc at Imperial College London, where I received the Governor's Prize in Mathematics, awarded to the best graduating student. My Master thesis research was on falling ferrofluids, under the supervision of Prof D.T. Papageorgiou. 
 {style="text-align: justify;"}

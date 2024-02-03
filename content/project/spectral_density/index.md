@@ -26,7 +26,7 @@ url_video: ''
 # slides: example
 ---
 
-UROP Project: Spectral Density Estimation on the Kernel Polynomial Method, supervised by Dr [Andreew Horning](https://math.mit.edu/directory/profile.html?pid=2334)
+UROP Project: Spectral Density Estimation on the Kernel Polynomial Method, supervised by Dr [Andrew Horning](https://math.mit.edu/directory/profile.html?pid=2334)
 
 Developed a result on the convergence of random variables when transformed by Chebyshev Polynomials.
 

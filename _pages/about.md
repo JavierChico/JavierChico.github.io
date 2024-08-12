@@ -1,11 +1,15 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Javier Chico Vazquez"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+Javier Chico Vazquez is a DPhil at the Mathematical Institute in Oxford, under the supervision of [Prof. Dominic Vella](https://people.maths.ox.ac.uk/vella/) and Prof. [Derek Moulton](https://people.maths.ox.ac.uk/moulton/). In my research I use techniques from Applied Mathematics to model phenomena in the natural sciences, the weirder the topic the more interesting. If you have a topic suggestion feel free to contact me!
+
+I completed my BSc and MSc at Imperial College London, where I received the Governor's Prize in Mathematics, awarded to the best graduating student. My Master thesis research was on falling ferrofluids, under the supervision of Prof [D.T. Papageorgiou](https://www.imperial.ac.uk/people/d.papageorgiou). 
 
 This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
 

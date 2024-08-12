@@ -24,7 +24,7 @@ author:
   avatar           : "matriculation_photo.jpg"
   name             : "Javier Chico Vazquez"
   pronouns         : # example: "she/her"  
-  bio              : "Javier Chico Vazquez is a DPhil at the Mathematical Institute in Oxford, under the supervision of Prof. Dominic Vella and Prof. Derek Moulton. In my research I use techniques from Applied Mathematics to model phenomena in the natural sciences, the weirder the topic the more interesting. If you have a topic suggestion feel free to contact me!"
+  bio              : "PhD student at the Mathematical Institute in Oxford, supervised by Prof. Dominic Vella and Prof. Derek Moulton."
   location         : "Oxford, UK"
   employer         : "Mathematical Institute, University of Oxford"
   uri              : # URL
@@ -43,7 +43,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : #"academicpages"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 

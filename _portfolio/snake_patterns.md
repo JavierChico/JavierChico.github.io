@@ -9,3 +9,4 @@ collection: portfolio
 * Submitted for 18.354 Continuum systems
 * Focused on analysing the pattern formation on growing domains problem by looking at snakes.
 * Simulated the nonlinear PDE system with particular attention on the chemotaxis term.
+* Project avilable [here](/files/18_354_Course_Project_javi_true_final.pdf)

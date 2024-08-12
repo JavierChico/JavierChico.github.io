@@ -12,8 +12,8 @@ You can find a PDF version [here](files/CV_academic.pdf)
 
 Education
 ======
-* Ph.D in Mathematics, University of Oxford 2027 (expected)
-* M.Sc in Mathematics, Imperial College London, 2023
+* PhD in Mathematics, University of Oxford 2027 (expected)
+* MSci in Mathematics, Imperial College London, 2023
 
 Work experience
 ======

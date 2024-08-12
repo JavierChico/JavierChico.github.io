@@ -16,29 +16,26 @@ Education
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Spring 2024: Tutor
+  * Merton College, Oxford
+  * Specialised tutoring in Viscous Flow
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2023, Spring 2024: Teaching Assistant
+  * Mathematical Institute
+  * Applied PDEs
+  * Viscous Flow
+  * Mathematical Mechanical Biology
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2023-24: Peer tutor
+  * Imperial College London
+  * Weekly tutorial with two groups of first year undergraduate students.
+
+* 2023: Undergraduate Research
+  * Massachusetts Institute of Technology
+  * Summer Research on Prof. Lydia Bourouiba's lab (the Fluid Dynamics of Disease Transimission)
+  * UROP directed by Dr. Andrew Horning. Looked at fast Density of States/Spectral density estimation algorithms for large matrices. 
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+
 
 Publications
 ======
@@ -58,6 +55,9 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+Honors and awards
 ======
-* Currently signed in to 43 different slack teams
+* Imperial College Governor's prize in Mathematics (Best graduating student)
+* G-RESEARCH academic excellence prize
+* St. John's College scholarship
+* Best poster at Dynamic Days 2024

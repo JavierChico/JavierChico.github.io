@@ -41,7 +41,7 @@ Here for Re = 1000, we don't observe any fancy formations and the solutions seem
 
 For Re = 1 million we observe far more interesting unsteady phenomena.
 
-<video width="320" height="240" controls>
+<video width="800" height="800" controls>
   <source src="/videos/spectral_vortcity/vorticity_evolution_Re_1000000_N_256.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>

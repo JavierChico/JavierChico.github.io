@@ -1,6 +1,6 @@
 ---
 title: "MSc thesis on falling ferrofluids"
-excerpt: "Master thesis ![msc!](/images/travelling_wave_formation_L_4_alpha_0.6_low_res.pdf)"
+excerpt: "Master thesis ![msc!](/images/travelling_wave_formation_L_4_alpha_0.6_low_res.jpg)"
 collection: portfolio
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Mathematics of snake skin patterns (2022)"
-excerpt: ""
+title: "Nonlinear dynamics of epidemic spread (2022)"
+excerpt: "![weakly_nl!](/images/weakly_nl.png)"
 collection: portfolio
 ---
 

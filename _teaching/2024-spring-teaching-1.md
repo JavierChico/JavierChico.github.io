@@ -8,4 +8,4 @@ date: 2024-01-01
 location: "Oxford, UK"
 ---
 
-I was a TA for an MSc level course on Mathematical Mechanical Biology, lectured by Derek Moulton. Topics covered included: the Mathematics of rods and shells, mathematical descriptions of growth, nonlinear elasticity and morpohoelasticity.
+I was a TA for an MSc level course on [Mathematical Mechanical Biology](https://people.maths.ox.ac.uk/moulton/teaching.html), lectured by Derek Moulton. Topics covered included: the Mathematics of rods and shells, mathematical descriptions of growth, nonlinear elasticity and morpohoelasticity.

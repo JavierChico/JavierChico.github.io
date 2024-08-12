@@ -19,7 +19,7 @@ The pressure gradient can be problematic in CFD algorithms, as there are no expl
 
 $$\frac{D\omega}{Dt} = \omega\cdot\nabla \boldsymbol{u}+\frac{1}{Re}\nabla^2\omega$$
 
-In 2 dimensions, the vortex stretching term is identically zero, so that we have an advection diffusion equation for the (scalar) vorticity $\omega$:
+In 2 dimensions, the vortex stretching term is identically zero, so that we have an advection diffusion equation for the (scalar) vorticity \\(\omega\\):
 
 $$\frac{D\omega}{Dt} = \frac{1}{Re}\nabla^2\omega$$
 

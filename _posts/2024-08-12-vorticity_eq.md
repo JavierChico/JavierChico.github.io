@@ -17,7 +17,7 @@ $$\frac{\partial \boldsymbol{u}}{\partial t}+\boldsymbol{u}\cdot\boldsymbol{\nab
 
 The pressure gradient can be problematic in CFD algorithms, as there are no explicit conditions for the pressure at boundaries. Hence, a commonly used trick is to take the curl of the momentum equations, leading to the [vorticity equation](https://en.wikipedia.org/wiki/Vorticity_equation):
 
-$$\frac{D\boldsymbol{\omega}}{Dt} = \boldsymbol{\omega}\cdod\boldsymbol{\nabla} \boldsymbol{u}+\frac{1}{\text{Re}}\nabla^2\boldsymbol{\omega}$$
+$$\frac{D\boldsymbol{\omega}}{Dt} = \boldsymbol{\omega}\cdot\boldsymbol{\nabla} \boldsymbol{u}+\frac{1}{\text{Re}}\nabla^2\boldsymbol{\omega}$$
 
 In 2 dimensions, the vorticity can be described by a single scalar, \\(\boldsymbol{\omega} = \boldsymbol{\nabla}\times \boldsymbol{u}=\omega \boldsymbol{k}\\). It is easy to verify that the vortex stretching term ( \\(\boldsymbol{\omega}\cdot\nabla\boldsymbol{u}\\) ) is identically zero, so that we have an advection diffusion equation for the (scalar) vorticity \\(\omega\\):
 

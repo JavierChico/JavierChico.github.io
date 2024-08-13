@@ -41,7 +41,7 @@ The main drawback of our method (and spectral methods more generally) is that en
 
 Some videos of Solutions
 ------
-We simulate the system for different Reynolds numbers and different spectral accuracies. My laptop can sovle the equations for N=64 in less than a minute, but struggles a bit more for higher N. 
+We simulate the system for different Reynolds numbers and different spectral accuracies. My laptop can sovle the equations for N = 64 in less than a minute, but struggles a bit more for higher N. A collection of movies is available in [this Youtube playlist](https://www.youtube.com/playlist?list=PLLYwsGNINCFRoQVrj4AtngQL8uvaAS3RL).
 
 Here for Re = 1000, we don't observe any fancy formations and the solutions seem to converge to a steady pattern. 
 

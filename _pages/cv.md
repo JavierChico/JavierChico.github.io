@@ -14,6 +14,7 @@ Education
 ======
 * PhD in Mathematics, University of Oxford 2027 (expected)
 * MSci in Mathematics, Imperial College London, 2023
+* Exchange year at MIT, 2022/23
 
 Work experience
 ======
@@ -33,7 +34,7 @@ Work experience
 
 * 2023: Undergraduate Research
   * Massachusetts Institute of Technology
-  * Summer Research on Prof. Lydia Bourouiba's lab (the Fluid Dynamics of Disease Transimission)
+  * Summer Research in Prof. Lydia Bourouiba's lab (the Fluid Dynamics of Disease Transmission)
   * UROP directed by Dr. Andrew Horning. Looked at fast Density of States/Spectral density estimation algorithms for large matrices. 
   
 

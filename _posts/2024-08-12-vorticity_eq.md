@@ -65,3 +65,86 @@ Using a cluster, we can obtain solutions with N=512
   <source src="/videos/spectral_vortcity/vorticity_evolution_Re_10000000_N_512_HD.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+
+The code required to solve the problem, including a smoothed random initial condition is available here 
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft2, ifft2, fftfreq
+from scipy.integrate import solve_ivp
+import matplotlib.animation as animation
+import time
+
+print('Parameters')
+# Parameters
+N = 64  # Grid size 
+L = 1.0  # Domain size
+dx = L / N
+dy = L / N
+Re = 1e5  # Reynolds number
+T = 100  # Total time
+time_steps = 101  # Number of time steps
+t = np.linspace(0,T,time_steps); t_span = (0,T)
+dt = t[1]-t[0]
+# Grid points
+x = np.linspace(0, L, N, endpoint=False)
+y = np.linspace(0, L, N, endpoint=False)
+dx=x[1]-x[0];dy=y[1]-y[0]
+X, Y = np.meshgrid(x, y)
+
+# Frequency components
+kx = fftfreq(N, d=dx) * 2 * np.pi
+ky = fftfreq(N, d=dy) * 2 * np.pi
+KX, KY = np.meshgrid(kx, ky)
+K2 = KX**2 + KY**2
+K2[0, 0] = 1  # To avoid division by zero later
+
+def RHS(t, vorticity_vector):
+    w = vorticity_vector.reshape((N,N), order='C')
+    w_hat = fft2(w)
+    
+    psi_hat = -w_hat / K2
+    psi = np.real(ifft2(psi_hat))
+
+    # Compute velocity: u = curl(psi k)
+    u = np.real(ifft2(1j * KY * psi_hat))  # u = d(psi)/dy
+    v = -np.real(ifft2(1j * KX * psi_hat))  # v = -d(psi)/dx
+
+    # Compute nonlinear term: (u.grad)w
+    w_x = np.real(ifft2(1j * KX * w_hat))
+    w_y = np.real(ifft2(1j * KY * w_hat))
+    nonlinear_term = u * w_x + v * w_y
+    w_x = np.real(ifft2(1j * KX * w_hat))  # ∂w/∂x
+    w_y = np.real(ifft2(1j * KY * w_hat))  # ∂w/∂y
+    nonlinear_term = u * w_x + v * w_y
+
+    # Compute the diffusion term
+    diffusion_term = np.real(ifft2(-K2 * w_hat)) / Re
+    dwdt = diffusion_term-nonlinear_term
+
+    # Explicit update of vorticity
+    return dwdt.flatten(order='C')
+
+# Initial conditions for vorticity w (random smooth initial condition)
+random_coefficients = (np.random.normal(size=(N, N)) + 1j * np.random.normal(size=(N, N)))
+gaussian_filter = np.exp(-0.01 * (KX**2 + KY**2))
+w_hat = random_coefficients * gaussian_filter
+w_hat = (w_hat + np.conj(np.flipud(np.fliplr(w_hat)))) / 2
+w_hat[0, 0] = 0
+w_ic = np.real(ifft2(w_hat))+np.sin(10*X)*np.sin(4*Y)
+w = w_ic/np.max(abs(w_ic))
+vorticity_vector_ic = w.flatten(order='C')
+w_sol_vec = np.zeros((N**2, len(t)))
+w_sol_vec[:,0] = vorticity_vector_ic
+#solve
+start = time.time();print('Start')
+for j in range(len(t)-1):
+    t_span_j = (t[j],t[j+1])
+    solution = solve_ivp(RHS, t_span_j, w_sol_vec[:,j],method='RK45', atol=1e-5)
+    w_sol_vec[:,j+1] = solution.y[:,-1]
+    print(f"{round(100*(1+j)/len(t),3)} %")
+w_sol = w_sol_vec.reshape((N,N,len(t)),order='C')
+stop = time.time()
+print(f'Equations solved in {round(stop-start,1)} seconds')
+```

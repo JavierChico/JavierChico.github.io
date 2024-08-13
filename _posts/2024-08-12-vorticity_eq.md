@@ -39,15 +39,29 @@ The pseudospectral method makes full use of this, by evaluating derivatives in F
 
 The main drawback of our method (and spectral methods more generally) is that enforcing boundary conditions can be very hard, and generally involves methods [beyond the scope](https://ntrs.nasa.gov/api/citations/19960029104/downloads/19960029104.pdf) of this post. For this reason we choose to work with the natural conditions for spectral methods: periodic boundary conditions. 
 
+Given a spectral discretization in space, the system can be sovled in time using a built-in integrator, like scipy's solve_ivp. A good method to prescribe is [RK45](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods), although in some instances a stiff solver like the Backward Differentiation Formula, [BDF](https://en.wikipedia.org/wiki/Backward_differentiation_formula) might be better suited.
+
 Some videos of Solutions
 ------
 We simulate the system for different Reynolds numbers and different spectral accuracies. My laptop can sovle the equations for N = 64 in less than a minute, but struggles a bit more for higher N. A collection of movies is available in [this Youtube playlist](https://www.youtube.com/playlist?list=PLLYwsGNINCFRoQVrj4AtngQL8uvaAS3RL).
 
 Here for Re = 1000, we don't observe any fancy formations and the solutions seem to converge to a steady pattern. 
 
+<video width="800" height="800" controls>
+  <source src="/videos/spectral_vortcity/vorticity_evolution_Re_1000_N_64_HD_test.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 For Re = 1 million we observe far more interesting unsteady phenomena.
 
 <video width="800" height="800" controls>
   <source src="/videos/spectral_vortcity/vorticity_evolution_Re_1000000_N_256.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+Using a cluster, we can obtain solutions with N=512
+
+<video width="800" height="800" controls>
+  <source src="/videos/spectral_vortcity/vorticity_evolution_Re_10000000_N_512_HD.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>

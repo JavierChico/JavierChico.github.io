@@ -13,15 +13,15 @@ Solving Navier-Stokes via the vorticity equation
 
 In this short post I provide some tricks and code to simulate high accuracy two dimensional flows using a laptop. Starting from the Navier-Stokes equations for a Newtonian incompressible fluid:
 
-$$\frac{\partial \boldsymbol{u}}{\partial t}+\boldsymbol{u}\cdot\nabla\boldsymbol{u}=-\nabla p +\frac{1}{\text{Re}}\nabla^2\boldsymbol{u}\quad \boldsymbol{\nabla}\cdot\boldsymbol{u}=0$$
+$$\frac{\partial \boldsymbol{u}}{\partial t}+\boldsymbol{u}\cdot\boldsymbol{\nabla}\boldsymbol{u}=-\boldsymbol{\nabla}p +\frac{1}{\text{Re}}\nabla^2\boldsymbol{u}\quad \quad \quad \boldsymbol{\nabla}\cdot\boldsymbol{u}=0$$
 
 The pressure gradient can be problematic in CFD algorithms, as there are no explicit conditions for the pressure at boundaries. Hence, a commonly used trick is to take the curl of the momentum equations, leading to the [vorticity equation](https://en.wikipedia.org/wiki/Vorticity_equation):
 
-$$\frac{D\boldsymbol{\omega}}{Dt} = \boldsymbol{\omega}\cdot\nabla \boldsymbol{u}+\frac{1}{Re}\nabla^2\boldsymbol{\omega}$$
+$$\frac{D\boldsymbol{\omega}}{Dt} = \boldsymbol{\omega}\cdot\nabla \boldsymbol{u}+\frac{1}{\text{Re}}\nabla^2\boldsymbol{\omega}$$
 
 In 2 dimensions, the vorticity can be described by a single scalar, \\(\boldsymbol{\omega} = \nabla\times \boldsymbol{u}=\omega \boldsymbol{k}\\). It is easy to verify that the vortex stretching term ( \\(\boldsymbol{\omega}\cdot\nabla\boldsymbol{u}\\) ) is identically zero, so that we have an advection diffusion equation for the (scalar) vorticity \\(\omega\\):
 
-$$\frac{D\omega}{Dt} = \frac{1}{Re}\nabla^2\omega$$
+$$\frac{D\omega}{Dt} = \frac{1}{\text{Re}}\nabla^2\omega$$
 
 Finally, it is well known that in two dimensions a stream function \\(\psi\\) is guaranteed to exist and is related to the vorticity by
 
@@ -66,14 +66,13 @@ Using a cluster, we can obtain solutions with N=512
 Your browser does not support the video tag.
 </video>
 
-The code required to solve the problem, including a smoothed random initial condition is available here 
+The code required to solve the problem, including a smoothed random initial condition is available below. The integration steps are done in a strange way so that we can track the solution progress in real time. 
 
 ```
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.fft import fft2, ifft2, fftfreq
 from scipy.integrate import solve_ivp
-import matplotlib.animation as animation
 import time
 
 print('Parameters')
@@ -83,7 +82,7 @@ L = 1.0  # Domain size
 dx = L / N
 dy = L / N
 Re = 1e5  # Reynolds number
-T = 100  # Total time
+T = 100  # End time
 time_steps = 101  # Number of time steps
 t = np.linspace(0,T,time_steps); t_span = (0,T)
 dt = t[1]-t[0]
@@ -132,7 +131,7 @@ gaussian_filter = np.exp(-0.01 * (KX**2 + KY**2))
 w_hat = random_coefficients * gaussian_filter
 w_hat = (w_hat + np.conj(np.flipud(np.fliplr(w_hat)))) / 2
 w_hat[0, 0] = 0
-w_ic = np.real(ifft2(w_hat))+np.sin(10*X)*np.sin(4*Y)
+w_ic = np.real(ifft2(w_hat))
 w = w_ic/np.max(abs(w_ic))
 vorticity_vector_ic = w.flatten(order='C')
 w_sol_vec = np.zeros((N**2, len(t)))
@@ -141,7 +140,7 @@ w_sol_vec[:,0] = vorticity_vector_ic
 start = time.time();print('Start')
 for j in range(len(t)-1):
     t_span_j = (t[j],t[j+1])
-    solution = solve_ivp(RHS, t_span_j, w_sol_vec[:,j],method='RK45', atol=1e-5)
+    solution = solve_ivp(RHS, t_span_j, w_sol_vec[:,j], method='RK45', atol=1e-5)
     w_sol_vec[:,j+1] = solution.y[:,-1]
     print(f"{round(100*(1+j)/len(t),3)} %")
 w_sol = w_sol_vec.reshape((N,N,len(t)),order='C')

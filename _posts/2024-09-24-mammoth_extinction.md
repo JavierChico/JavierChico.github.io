@@ -25,7 +25,7 @@ we neglect their migration term, which will be incorporated in the spatial scena
 
 The standard approach to study this system is to linearise around equilibria and study their stability by looking at the sign of the eigenvalues of the Jacobian matrix. A summary of the results for this is presented in their paper, and here we opt to perform a limited parameter sweep. First, we provide code to solve the system, using Scipy's built in integrator and specifying the integration method as RK45. Unlike in other [scenarios](https://javierchico.github.io/posts/2012/08/vorticity_eq/), this problem is not stiff and we do not require a stiff integrator. With a future parameter sweep in mind, we set up the function with parameters so that it is easily called later. 
 
-![ODE_example](/_posts/mammoth_figures/ODE_example_1.jpeg)
+![ODE_example!](/mammoth_figures/ODE_example_1.jpeg)
 
 ```
 import numpy as np

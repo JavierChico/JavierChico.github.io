@@ -1,3 +1,4 @@
+---
 title: 'Mathematics and anthropogenic extinction I: ODEs'
 date: 2024-09-24
 permalink: /posts/2024/09/mammoth_extinction/
@@ -13,9 +14,12 @@ Modelling extinction events
 Starting from the model presented by Frank et. al. in ["Investigating Anthropogenic Mammoth Extinction with Mathematical Models"](https://ir.library.illinoisstate.edu/spora/vol1/iss1/3/), we will provide some simulations of the ODE system presented for the extinction of mammoths. 
 
 In follow up posts, we will generalise their model to include spatial effects, turning it into a PDE system (a continuum version from their grid based apporach). We start with a simplified dimensionless version fo their ODE model
-$$\frac{dH}{dt}=H(1-H) + B_H \frac{M^2H}{M^2+r^2}$$
-$$\frac{dM}{dt}=M(1-M)(\alpha M) - B_M \frac{M^2H}{M^2+r^2}$$
-we neglect their migration term, which will be incorporated in the spatial scenario. Here, $H$ is the number of humans, $M$ is the number of mammoths. The parameters represent different phenomenological laws: $\alpha$ represents the [Alle effect](https://en.wikipedia.org/wiki/Allee_effect#Mathematical_models) etc..., and the nonlinear coupling is a standard predation term. 
+
+$$\frac{dH}{dt}=A_H H(1-H) + B_H \frac{M^2H}{M^2+r^2}$$
+
+$$\frac{dM}{dt}=A_M M(1-M)(\alpha M-1) - B_M \frac{M^2H}{M^2+r^2}$$
+
+we neglect their migration term, which will be incorporated in the spatial scenario. Here, \\ H \\ is the number of humans, \\ M \\ is the number of mammoths. The parameters represent different phenomenological laws: $\alpha$ represents the [Alle effect](https://en.wikipedia.org/wiki/Allee_effect#Mathematical_models) etc..., and the nonlinear coupling is a standard predation term. 
 
 
 
@@ -54,6 +58,6 @@ H = sol.y[0,:];M = sol.y[-1,:]
 
 By sweeping through values of the initial conditions and integrating both forwards and backwards in time we can construct phase diagrams, plots in \\ (H,M)\\ space where we can clearly see the stability of the fixed points. 
 
-![ODE_s!](/_posts/mammoth_figures/extinction_phase_plots_ODEs.pdf)
+![ODE_s](/_posts/mammoth_figures/extinction_phase_plots_ODEs.pdf "test")
 
 Here, different values of \\ A_M \\ and \\ B_M \\ are represented in the grid. 

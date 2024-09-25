@@ -19,13 +19,13 @@ $$\frac{dH}{dt}=A_H H(1-H) + B_H \frac{M^2H}{M^2+r^2}$$
 
 $$\frac{dM}{dt}=A_M M(1-M)(\alpha M-1) - B_M \frac{M^2H}{M^2+r^2}$$
 
-we neglect their migration term, which will be incorporated in the spatial scenario. Here, \\ H \\ is the number of humans, \\ M \\ is the number of mammoths. The parameters represent different phenomenological laws: $\alpha$ represents the [Alle effect](https://en.wikipedia.org/wiki/Allee_effect#Mathematical_models) etc..., and the nonlinear coupling is a standard predation term. 
+we neglect their migration term, which will be incorporated in the spatial scenario. Here, \\( H \\) is the number of humans, \\( M \\) is the number of mammoths. The parameters represent different phenomenological laws: $\alpha$ represents the [Alle effect](https://en.wikipedia.org/wiki/Allee_effect#Mathematical_models) etc..., and the nonlinear coupling is a standard predation term. 
 
 
 
 The standard approach to study this system is to linearise around equilibria and study their stability by looking at the sign of the eigenvalues of the Jacobian matrix. A summary of the results for this is presented in their paper, and here we opt to perform a limited parameter sweep. First, we provide code to solve the system, using Scipy's built in integrator and specifying the integration method as RK45. Unlike in other [scenarios](https://javierchico.github.io/posts/2012/08/vorticity_eq/), this problem is not stiff and we do not require a stiff integrator. With a future parameter sweep in mind, we set up the function with parameters so that it is easily called later. 
 
-![ODE_example!](/mammoth_figures/ODE_example_1.jpeg)
+![ODE_example!](/_posts/mammoth_figures/ODE_example_1.jpeg)
 
 ```
 import numpy as np
@@ -58,8 +58,8 @@ H = sol.y[0,:];M = sol.y[-1,:]
 
 ```
 
-By sweeping through values of the initial conditions and integrating both forwards and backwards in time we can construct phase diagrams, plots in \\ (H,M)\\ space where we can clearly see the stability of the fixed points. 
+By sweeping through values of the initial conditions and integrating both forwards and backwards in time we can construct phase diagrams, plots in \\( (H,M)\\) space where we can clearly see the stability of the fixed points. 
 
 ![ODE_s](/_posts/mammoth_figures/extinction_phase_plots_ODEs.jpeg "test")
 
-Here, different values of \\ A_M \\ and \\ B_M \\ are represented in the grid. 
+Here, different values of \\(A_M \\) and \\(B_M \\) are represented in the grid. 

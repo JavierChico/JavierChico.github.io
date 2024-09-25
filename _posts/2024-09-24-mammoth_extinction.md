@@ -60,10 +60,6 @@ H = sol.y[0,:];M = sol.y[-1,:]
 
 By sweeping through values of the initial conditions and integrating both forwards and backwards in time we can construct phase diagrams, plots in \\ (H,M)\\ space where we can clearly see the stability of the fixed points. 
 
-<embed src="/_posts/mammoth_figures/extinction_phase_plots_ODEs.pdf" width="600" height="400" type="application/pdf">
-
-<iframe src="/_posts/mammoth_figures/extinction_phase_plots_ODEs.pdf" width="600" height="400"></iframe>
-
-![ODE_s](/_posts/mammoth_figures/extinction_phase_plots_ODEs.pdf "test")
+![ODE_s](/_posts/mammoth_figures/extinction_phase_plots_ODEs.jpeg "test")
 
 Here, different values of \\ A_M \\ and \\ B_M \\ are represented in the grid. 

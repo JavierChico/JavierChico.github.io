@@ -63,3 +63,21 @@ By sweeping through values of the initial conditions and integrating both forwar
 ![ODE_s](/images/mammoth_figures/extinction_phase_plots_ODEs.jpeg "test")
 
 Here, different values of \\(A_M \\) and \\(B_M \\) are represented in the grid. 
+
+
+<form action="https://jchico1.replit.app/solve" method="POST">
+  <label for="A_H">A_H:</label>
+  <input type="text" id="A_H" name="A_H" value="1.0"><br><br>
+  <label for="B_H">B_H:</label>
+  <input type="text" id="B_H" name="B_H" value="0.1"><br><br>
+  <label for="A_M">A_M:</label>
+  <input type="text" id="A_M" name="A_M" value="0.01"><br><br>
+  <label for="B_M">B_M:</label>
+  <input type="text" id="B_M" name="B_M" value="0.1"><br><br>
+  <label for="r">r:</label>
+  <input type="text" id="r" name="r" value="0.1"><br><br>
+  <label for="alpha">alpha:</label>
+  <input type="text" id="alpha" name="alpha" value="10.0"><br><br>
+  
+  <input type="submit" value="Solve ODE">
+</form>

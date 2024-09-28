@@ -29,16 +29,17 @@ $$\boldsymbol{J}_H=H\boldsymbol{\nabla}M$$
 
 This choice for the flux makes the flux nonlinear, and the fact that we do not care about the gradient of human population density makes this term slighlty atypical. As the PDEs where already nonlinear this is not that much of a sacrifise. 
 
-We now need to decice on the boundary conditions. [Periodic boundary conditions usually allow for nice spectral methods](https://javierchico.github.io/posts/2012/08/vorticity_eq/), but continents are not periodic, so in the sake of realism we go for Neumann (no flux) boundary conditions on the edges of the domain. This means \\(\boldsymbol{n}\cdot\boldsymbol{\nabla}H,M=0\\) with n the unit outward normal to the domain. If we had a powerful enough computer, we could discretise the continental United States, compute the unit normal at each element and solve the equations in that domain. Unfortunately we do not so we just stick to the 1D case for now. 
+We now need to decice on the boundary conditions. [Periodic boundary conditions usually allow for nice spectral methods](https://javierchico.github.io/posts/2012/08/vorticity_eq/), but continents are not periodic, so in the sake of realism we go for Neumann (no flux) boundary conditions on the edges of the domain. This means \\(\boldsymbol{n}\cdot\boldsymbol{\nabla}H,M=0\\) with n the unit outward normal to the domain. If we had a powerful enough computer, we could discretise the continental United States, compute the unit normal at each element and solve the equations in that domain. Unfortunately we do not have a supercomputer and we just stick to the 1D case for now. 
 
 We now must choose how to discretise the domain. The method of lines (discretising space and leaving a system of many time-dependent ODE problems) is already a good start, but the nonlienar growth, coupling and fluxes means we need to be really careful with the next step. Finite differences is likely to struggle, and finite elements and volumes are too engineery for the writer's taste, so we try an spectral method. The FFT is not rescuing us here because of our boundary conditions, but the [Discrete Cosine Transform might](https://en.wikipedia.org/wiki/Discrete_cosine_transform). 
 
-The DCT world is quite complicated (SciPy has like 4 different types, each with its own sign convention), so my recommendation is just pickking one, type II in our case, and just sticking with it. Also, if you are unsure if your transform will work with the kind of solutions that will show up, a good check is to transform and inverse transform a candidate solution
+The DCT world is quite complicated (SciPy has like 4 different types, each with its own sign convention), so my recommendation is just picking one, type II in our case, and just sticking with it. Also, if you are unsure if your transform will work with the kind of solutions that will show up, a good check is to transform and inverse transform a candidate solution
 
-Unlike in the ODE case, our investigation here is not so focused on wether mammoths go extinct or not, but we just want to see some cool solutions. Cool solutions in this field means a travelling wave: a front of humans advancing onto a mammoth population. 
+Unlike in the ODE case, our investigation here is not so focused on wether mammoths go extinct or not, but we just want to see some cool solutions. Cool solutions in this field means a travelling wave: a front of humans advancing onto a mammoth population. We can see this in the spatio temporal diagrams below, where we see how a healthy population of mammoths goes extinct after the introduction of a small population of humans to the left of the domain. Here, red means healthy population and blue means extinction. Further to this, we can see how a front of humans (the yellow line) advances from the left side to the right side of the domain in about 2 time units (all variables are dimensionless), and we can also see the corresponding receeding front of mammoth population density. 
 
 ![ODE_example!](/images/spatiotemporal_heatmap.jpg)
 
+With this choice of parameters humans grow their numbers locally before moving on to the next location. We can see this more celarly by looking at a video of the evolution of the spatial distribution of both species.
 
 <video width="800" height="400" controls>
   <source src="/videos/mammoth/mammoth_pde_solution.mp4" type="video/mp4">
@@ -48,10 +49,9 @@ Your browser does not support the video tag.
 ```
 from scipy.fft import dct, idct,dctn, idctn
 import numpy as np
-from scipy.fft import fft, ifft, fftfreq
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
-from scipy.fft import fft2, ifft2
+
 
 def spectral_derivative(u, L):
     N = len(u)
@@ -87,7 +87,7 @@ dt = T/Nt # Time step for output
 x = np.linspace(0, L, N, endpoint=True)
 
 # Set up the initial conditions (example)
-H0 = 0.2*np.exp(-(x)**2/0.01)#0.1*(np.tanh(20*(x-L/2+0.05)))+0.1*(-np.tanh(20*(x-0.05-L/2)))#
+H0 = 0.2*np.exp(-(x)**2/0.01)
 M0 = 1 + 0.1 * np.cos(2 * np.pi * x / L)*0
 
 # Combine initial conditions into a single vector

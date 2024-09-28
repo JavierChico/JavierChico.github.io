@@ -33,45 +33,79 @@ We now need to decice on the boundary conditions. [Periodic boundary conditions 
 
 We now must choose how to discretise the domain. The method of lines (discretising space and leaving a system of many time-dependent ODE problems) is already a good start, but the nonlienar growth, coupling and fluxes means we need to be really careful with the next step. Finite differences is likely to struggle, and finite elements and volumes are too engineery for the writer's taste, so we try an spectral method. The FFT is not rescuing us here because of our boundary conditions, but the [Discrete Cosine Transform might](https://en.wikipedia.org/wiki/Discrete_cosine_transform). 
 
-The DCT world is quite complicated (SciPy has like 4 different types, each with its own sign convention), so my recommendation is just pickking one, type II in our case, and just sticking with it. 
+The DCT world is quite complicated (SciPy has like 4 different types, each with its own sign convention), so my recommendation is just pickking one, type II in our case, and just sticking with it. Also, if you are unsure if your transform will work with the kind of solutions that will show up, a good check is to transform and inverse transform a candidate solution
 
 Unlike in the ODE case, our investigation here is not so focused on wether mammoths go extinct or not, but we just want to see some cool solutions. Cool solutions in this field means a travelling wave: a front of humans advancing onto a mammoth population. 
 
-![ODE_example!](/images/mammoth_figures/ODE_example_1.jpeg)
+![ODE_example!](/images/spatiotemporal_heatmap.jpg)
 
 ```
+from scipy.fft import dct, idct,dctn, idctn
 import numpy as np
-import matplotlib.pyplot as plt
+from scipy.fft import fft, ifft, fftfreq
 from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+from scipy.fft import fft2, ifft2
 
-def RHS(t,vector,A_H, B_H, r,alpha, A_M,B_M):
-    H = vector[0];M = vector[-1]
-    dHdt = A_H*H*(1-H) + B_H*M**2*H/(M**2+r**2)
-    dMdt = A_M*M*(1-M)*(alpha*M-1) - B_M*M**2*H/(M**2+r**2)
-    return np.array([dHdt,dMdt])
+def spectral_derivative(u, L):
+    N = len(u)
+    k = np.arange(N)
+    return idctn((1j* k * np.pi / L * dctn(u, type=2, norm='ortho')), type=2, norm='ortho')
 
-H0=0.1;M0=1
-y0 = np.array([H0,M0])
+def RHS(t, y,  L, N, A_H, B_H, r,alpha, A_M,B_M,D):
+    #N, L, A_H, B_H, r, B_M, alpha, D = params
+    H, M = np.split(y, 2)
+    
+    # Compute spatial derivatives
+    dHdx = spectral_derivative(H, L)
+    dMdx = spectral_derivative(M, L)
+    d2Hdx2 = spectral_derivative(dHdx, L).real
+    d2Mdx2 = spectral_derivative(dMdx, L).real
+    
+    # Compute div(H grad(M))
+    div_H_grad_M = spectral_derivative(H * dMdx, L).real
+    
+    # Compute right-hand sides
+    dHdt =  A_H * H*(1-H) + M**2*H/(M**2+r**2) * B_H - D * div_H_grad_M #+ d2Hdx2
+    dMdt =  A_M * M*(1-M)*(M*alpha - 1) - M**2*H/(M**2+r**2) * B_M + D * d2Mdx2
+    
+    return np.concatenate([dHdt, dMdt])
+
+L = 1  # Length of the interval
+N = 64   # Number of spatial points
+T = 8 # Total simulation time
+Nt = 200
+dt = T/Nt # Time step for output
+
+# Set up the grid
+x = np.linspace(0, L, N, endpoint=True)
+
+# Set up the initial conditions (example)
+H0 = 0.2*np.exp(-(x)**2/0.01)#0.1*(np.tanh(20*(x-L/2+0.05)))+0.1*(-np.tanh(20*(x-0.05-L/2)))#
+M0 = 1 + 0.1 * np.cos(2 * np.pi * x / L)*0
+
+# Combine initial conditions into a single vector
+y0 = np.concatenate([H0, M0])
+
+# Set up the parameters for the PDEs
 params = {
-    'A_H': 1.0, 'B_H': .1, 'A_M': .01, 'B_M': 0.1,'r':.1,'alpha':10
+    'A_H': 1.0, 'B_H': 1, 'A_M': 0.1, 'B_M': 1,
+    'D':0.01,'r':0.1,'alpha':10
 }
-T = 20;Nt=300
 t_span = (0, T)  # From t=0 to t=10
 t_eval = np.linspace(0, T, Nt)
 # Solve the PDE system
 sol = solve_ivp(
-    lambda t, vector: RHS(t, vector, **params),
+    lambda t, y: RHS(t, y, L, N, **params),
     [0, T],
     y0,
     t_eval = t_eval,
-    method='BDF'
+    method='LSODA'
 )
-H = sol.y[0,:];M = sol.y[-1,:]
+
+# Extract solution
+H_sol = sol.y[:N]
+M_sol = sol.y[N:]
 
 ```
 
-By sweeping through values of the initial conditions and integrating both forwards and backwards in time we can construct phase diagrams, plots in \\( (H,M)\\) space where we can clearly see the stability of the fixed points. 
-
-![ODE_s](/images/mammoth_figures/extinction_phase_plots_ODEs.jpeg "test")
-
-Here, different values of \\(A_M \\) and \\(B_M \\) are represented in the grid. 

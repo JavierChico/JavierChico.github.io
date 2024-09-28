@@ -39,6 +39,12 @@ Unlike in the ODE case, our investigation here is not so focused on wether mammo
 
 ![ODE_example!](/images/spatiotemporal_heatmap.jpg)
 
+
+<video width="800" height="400" controls>
+  <source src="/videos/mammoth/mammoth_pde_solution.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 ```
 from scipy.fft import dct, idct,dctn, idctn
 import numpy as np

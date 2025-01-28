@@ -22,8 +22,10 @@ Work experience
   * Merton College, Oxford
   * Specialised tutoring in Viscous Flow
 
-* Fall 2023, Spring 2024: Teaching Assistant
+* 2023 - present: Teaching Assistant
   * Mathematical Institute
+  * Solid Mechanics
+  * Perturbation Methods
   * Applied PDEs
   * Viscous Flow
   * Mathematical Mechanical Biology

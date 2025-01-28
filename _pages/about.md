@@ -26,5 +26,8 @@ My PhD research is concerned with building mathematical models for how organisms
 
 # Collaboration with the Oxford Botanical Garden (OBG)
 
-We have a fruitfuil ongoing collaboration with [Chris Thorogood](https://www.obga.ox.ac.uk/people/chris-thorogood) from the OBG. We are interested in understing floral gigantism in Rafflesia, the World's largest flower. 
+We have a fruitfuil ongoing collaboration with [Chris Thorogood](https://www.obga.ox.ac.uk/people/chris-thorogood) from the OBG. We are interested in understing floral gigantism in Rafflesia, the World's largest flower. If you are interest in my work, check out this short Youtube video from the Mathematical Institute:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nyx08ftWCkg" 
+title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
+
 

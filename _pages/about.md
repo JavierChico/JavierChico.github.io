@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Javier Chico Vazquez is a DPhil at the Mathematical Institute in Oxford, under the supervision of [Prof. Dominic Vella](https://people.maths.ox.ac.uk/vella/) and Prof. [Derek Moulton](https://people.maths.ox.ac.uk/moulton/). In my research I use techniques from Applied Mathematics to model phenomena in the natural sciences, the weirder the topic the more interesting. If you have a topic suggestion feel free to contact me! 
+I am a PhD student at the Mathematical Institute in Oxford. I work with [Prof. Dominic Vella](https://people.maths.ox.ac.uk/vella/) and Prof. [Derek Moulton](https://people.maths.ox.ac.uk/moulton/). In my research I use techniques from Applied Mathematics to model phenomena in the natural sciences, the weirder the topic the more interesting. If you have a topic suggestion feel free to contact me! 
 
 My work often requires an intricate combination of theory, numerics and experimentation, and as such I have developed a diverse set of interests over the years:
 * Continuum mechanics (Fluid and Solid mechanics).

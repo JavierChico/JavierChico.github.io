@@ -17,7 +17,7 @@ My work often requires an intricate combination of theory, numerics and experime
 * Mathematical Biology.
 * Computational methods for Partial Differential Equations.
 
-I completed my BSc and MSc at Imperial College London, where I received the Governor's Prize in Mathematics, awarded to the best graduating student. My Master thesis research was on falling ferrofluids, under the supervision of Prof [D.T. Papageorgiou](https://profiles.imperial.ac.uk/d.papageorgiou). 
+I completed my BSc and MSc at Imperial College London, where I received the Governor's Prize in Mathematics, awarded to the best graduating student. My Master thesis research was on falling ferrofluids, under the supervision of Prof [D.T. Papageorgiou](https://profiles.imperial.ac.uk/d.papageorgiou). During my undergrad I had the privilege of attending MIT for a year, where I worked with [Andrew Horning](https://faculty.rpi.edu/andrew-horning) (now at RPI).
 
 
 # PhD Thesis

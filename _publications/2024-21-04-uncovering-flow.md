@@ -2,9 +2,9 @@
 title: "Uncovering flow and deformation regimes in the coupled fluid-solid vestibular system"
 collection: publications
 category: manuscripts
-permalink: /publication/2024-21-04-paper-title-number-1
+permalink: /publication/2024-04-21-paper-title-number-1
 excerpt: 'Uncovering flow and deformation regimes in the coupled fluid-solid vestibular system'
-date: 2024-21-04
+date: 2024-04-21
 venue: 'Journal 1'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'

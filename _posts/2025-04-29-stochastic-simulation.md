@@ -36,11 +36,15 @@ The second of these ideas, the growth of the variance, is critical to properly s
 Suppose you take $N$ independent random steps of size $\pm \Delta$, with equal chance for each option. By independent we mean that our previous step does not influence our next step, and if you want to be concrete you can take $\Delta x=1$ without loss of generality. Suppose we take those steps in $T$ seconds (or minutes, it does not really matter). Then, each step takes $\Delta t=T/N$, or more usefully $N=T/\Delta t$.
 
 Now, if each step is called $x_{j}=\pm \Delta x}$, then our current poition is $X_N=x_1+\cdots+x_N$. As the average of each step is zero, and the expectation is linear, $\mathbb{E}(X_N)=0$, i.e. the mean displacement is zero. However, we have to be more careful computing the variance. Because the steps are independent, we can compute the variance of the sum as the sum of the variances (this is in general NOT true and you have to always be careful about this!). For our purposes:
+
 $$\mathrm{Var}(X_N)=\mathrm{Var}(x_1)+\cdots+\mathrm{Var}(x_N)=N\mathrm{Var}(x_1)$$
 
 The first step uses independence to write the variance of a sum as the sum of the variances. Because all steps are identical, the variance is the same for all of them, so we just need to compute it for the first one. We can compute the variance (of a random variable $X$) using $\mathrm{Var}(X)=\mathbb{E}(X^2)-\mathbb{E}(X)^2$, where $\mathbb{E}$ is the expectation. We already figured out the expectation of $x_1$ is zero, so that the second term is zero. For the first one:
+
 $$\mathbb{E}((x_1)^2)=(\Delta x)^2 \cdot 0.5 + (-\Delta x)^2 \cdot 0.5=(\Delta x)^2$$
+
 This is because the probability to moving to the right (and to the left) is 0.5. The spread (varaince of $X_N$) after $T$ seconds is thus
+
 $$\mathrm{Var}(X_N)=\frac{N T (\Delta x)^2}{\Delta t}$$
 
 Here's the problem: if we want to take more and more steps and run the simulation for the same time, then $\Delta t$ get's smaller and smaller, and the variance blows up. this is undesireable, physics should not break down when we use smaller time steps (excluding quantum effects etc...). in practice, this means we must also make our step size constant. In particular, in order to keep the variance constant as $\Delta t\rightarrow0$, we must have $\Delta x^2=\Delta t$. In deterministic physics we usually face a similar problem, but this is usally remedied by using $\Delta x \sim \Delta t$. 

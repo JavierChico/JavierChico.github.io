@@ -1,6 +1,6 @@
 ---
 title: 'Stochastic Simulations for Dummies: Why √(Δt) is the Key'
-date: 2025-04-29
+date: 2025-04-27
 permalink: /posts/2025/04/stochastic_simulation/
 tags:
   - Stochastic differential equations

@@ -10,3 +10,6 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+
+#prevent ignoring of pdfs
+!_posts/stoch_simulation_figures/stoch_simulation_comparison.pdf

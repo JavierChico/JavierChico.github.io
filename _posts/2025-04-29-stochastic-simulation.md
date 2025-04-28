@@ -72,11 +72,11 @@ def random_walk(T=1, N=500, correct=True):
 
 Now, we do the follwing experiment: we run the same simulation a hundred times, for both N=500 and N=10000 time steps. We plot some trajectories for both the correct scaling (blue) and the incorrect scaling (red) in the left (N=500) and middle (N=10000) panels. We see that the blue lines are qualitatevily similar (same order of magnitude), except that the higher resolution simulations have a richer microstructure. The story for the red lines is different: the red lines for N=500 move more than the red lines for \\(N=10^4\\). We expect thigns to behave simlarly for different step sizes, so we know we must be using the wrong choice for the step size (and we are). The right panel confirms our intuition. We plot the variance (specifically the sum of the squares of the trajectories to the left), as a function of time, for the four cases. The \\(\sqrt{dt}\\) lines collapse to single scaling, confirming this is the correct choice. The \\(dt\\) lines (black and blue) are very different, so this must be the wrong choice.
 
-![ODE_example!](/images/spatiotemporal_heatmap.jpg)
+
 
 ![random walks!](/images/stoch_simulation_figures/stoch_simulation_comparison.jpg)
 
-![Random Walks](images/stoch_simulation_figures/stoch_simulation_comparison.jpg)
+![Random Walks!](images/stoch_simulation_figures/stoch_simulation_comparison.jpg)
 
 
 In the next entries in this series we will see how to generalize some of the ideas presented here. For instance, what shoudl we do if we suspect our stock will go up or down in the long term? What if we want to apply these ideas to simulate flying insects? How can we handle complicated domains? How can we make our code run faster if we need to run many many simulations? Stay tuned!

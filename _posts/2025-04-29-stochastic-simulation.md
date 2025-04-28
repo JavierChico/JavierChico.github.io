@@ -8,9 +8,6 @@ tags:
   - Brownian Motion
 ---
 
-Deterministic motion
-======
-
 # Stochastic Simulations for Dummies: Why Random Motion Needs √(Δt)
 
 Let's talk about randomness. Not just any randomness—the kind that makes tiny pollen grains jiggle in water (Brownian motion) or stock prices wiggle unpredictably.  
@@ -23,9 +20,8 @@ Suppose you are moving around with velocity \\(v\\). How much will you have trav
 
 ### The Random World
 
-Now suppose you take random steps—like a drunk person staggering left and right. Each step is independent, and on average, you go nowhere. But you don’t stay perfectly still—you spread out over time. By this I mean if you do this with 100 friends, you expect people to be more spread out over time.
+Now suppose you take random steps—like a drunk person staggering left and right. Each step is independent, and on average, you go nowhere. But you don’t stay perfectly still—you spread out over time. By this I mean if you do this with 100 friends, you expect people to be more spread out over time. So the key ideas are:
 
-**Key Idea:**  
 - The **average position** stays zero  
 - The **spread** (variance) grows with time. The variance is the average of the square of the distance.
 

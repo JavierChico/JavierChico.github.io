@@ -76,8 +76,6 @@ Now, we do the follwing experiment: we run the same simulation a hundred times, 
 
 ![random walks!](/images/stoch_simulation_figures/stoch_simulation_comparison.jpg)
 
-![Random Walks!](images/stoch_simulation_figures/stoch_simulation_comparison.jpg)
-
 
 In the next entries in this series we will see how to generalize some of the ideas presented here. For instance, what shoudl we do if we suspect our stock will go up or down in the long term? What if we want to apply these ideas to simulate flying insects? How can we handle complicated domains? How can we make our code run faster if we need to run many many simulations? Stay tuned!
 

@@ -35,7 +35,7 @@ The second of these ideas, the growth of the variance, is critical to properly s
 
 Suppose you take $N$ independent random steps of size \\(\pm \Delta \\), with equal chance for each option. By independent we mean that our previous step does not influence our next step, and if you want to be concrete you can take \\(\Delta x=1\\) without loss of generality. Suppose we take those steps in \\(T\\) seconds (or minutes, it does not really matter). Then, each step takes \\( \Delta t=T/N\\), or more usefully \\(N=T/\Delta t\\).
 
-Now, if each step is called \\(x_{j}=\pm \Delta x}\\), then our current poition is \\(X_N=x_1+\cdots+x_N\\). As the average of each step is zero, and the expectation is linear, \\(\mathbb{E}(X_N)=0\\), i.e. the mean displacement is zero. However, we have to be more careful computing the variance. Because the steps are independent, we can compute the variance of the sum as the sum of the variances (this is in general NOT true and you have to always be careful about this!). For our purposes:
+Now, if each step is called \\(x_{j}=\pm \Delta x\\), then our current poition is \\(X_N=x_1+\cdots+x_N\\). As the average of each step is zero, and the expectation is linear, \\(\mathbb{E}(X_N)=0\\), i.e. the mean displacement is zero. However, we have to be more careful computing the variance. Because the steps are independent, we can compute the variance of the sum as the sum of the variances (this is in general NOT true and you have to always be careful about this!). For our purposes:
 
 $$\mathrm{Var}(X_N)=\mathrm{Var}(x_1)+\cdots+\mathrm{Var}(x_N)=N\mathrm{Var}(x_1)$$
 

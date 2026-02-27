@@ -6,31 +6,38 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">
+    You can find my published work on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.
+  </div>
+
+  <!-- Preprints Section -->
+  <section id="preprints">
+    <h2>Preprints</h2>
+    <ul>
+      <li>
+        <strong>Flapping strategies for flying formations</strong>,
+        C. Mavroyiakoumou & J. Chico-Vázquez — arXiv preprint <em>arXiv:2601.12920</em> (2026).
+        <a href="https://arxiv.org/abs/2601.12920">View on arXiv</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Peer-Reviewed Papers Section -->
+  <section id="papers">
+    <h2>Peer-Reviewed Papers</h2>
+    <ul>
+      <li>
+        <strong>Uncovering flow and deformation regimes in the coupled fluid-solid vestibular system</strong>,
+        J. Chico-Vázquez, D.E. Moulton & D. Vella — <em>Journal of Fluid Mechanics</em>, 1022, A40 (2025).
+        <!-- Add a DOI or URL here if you have one -->
+      </li>
+      <li>
+        <strong>A mathematical model for optimal breakaways in cycling: balancing energy expenditure and crash risk</strong>,
+        J. Chico-Vázquez & I.M. Griffiths — <em>Royal Society Open Science</em>, 12(11) (2025).
+        <!-- Add a DOI or URL here if you have one -->
+      </li>
+    </ul>
+  </section>
+
 {% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
 

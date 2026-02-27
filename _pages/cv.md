@@ -7,9 +7,10 @@ redirect_from:
   - /resume
 ---
 
-You can find a PDF version [here](/files/CV_academic.pdf)
+My CV is [here](/files/CV_academic.pdf)
 {% include base_path %}
 
+<!--
 Education
 ======
 * PhD in Mathematics, University of Oxford 2027 (expected)
@@ -65,3 +66,4 @@ Honors and awards
 * G-RESEARCH academic excellence prize
 * St. John's College scholarship
 * Best poster at Dynamic Days 2024
+-->

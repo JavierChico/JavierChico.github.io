@@ -22,12 +22,24 @@ I completed my BSc and MSc at Imperial College London, where I received the Gove
 
 # PhD Thesis
 
-My PhD research is concerned with building mathematical models for how organisms sense their environment. My doctoral journey has led me to study electroreception in bees, smell in flies and the vestibular system in humans (how we sense balance). 
+My PhD research is concerned with building mathematical models for how organisms sense their environment. My doctoral journey has led me to study electroreception in bees and sharks, smell in flies and the vestibular system in humans (how we sense balance). 
 
 # Collaboration with the Oxford Botanical Garden (OBG)
 
 We have a fruitful ongoing collaboration with [Chris Thorogood](https://www.obga.ox.ac.uk/people/chris-thorogood) from the OBG. We are interested in understing floral gigantism in Rafflesia, the World's largest flower. If you are interest in my work, check out this short Youtube video from the Mathematical Institute:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nyx08ftWCkg" 
 title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
+
+# Cycling
+
+As an avid fan of cyling, I was eager to collaborate with [Ian Griffiths](https://people.maths.ox.ac.uk/griffit4/) on a project to model and find optimal racing strategies in cycling. Our framework incorporates find the optimal point in stage to attempt a breakaway from the peloton, leveraging information about drafting, energy consumtion and crucially the probability of crashing. You can find a short video highlighting our work here:
+<iframe width="560" height="315" src="https://www.youtube.com/shorts/yFjrov6pvvA" 
+title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
+
+# Bird flocks
+
+I study how bird flocks stabilize, reduce their energy expenditure and avoid crashes with the Hooke fellow [Christiana Mavroyiakoumou](https://people.maths.ox.ac.uk/mavroyiakoum/). You can read about our work in [this preprint](https://arxiv.org/abs/2601.12920).
+
+
 
 

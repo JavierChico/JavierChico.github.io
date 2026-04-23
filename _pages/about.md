@@ -33,8 +33,12 @@ title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
 # Cycling
 
 As an avid fan of cyling, I was eager to collaborate with [Ian Griffiths](https://people.maths.ox.ac.uk/griffit4/) on a project to model and find optimal racing strategies in cycling. Our framework incorporates find the optimal point in stage to attempt a breakaway from the peloton, leveraging information about drafting, energy consumtion and crucially the probability of crashing. You can find a short video highlighting our work here:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yFjrov6pvvA" 
-title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
+<div style="max-width:315px;">
+  <iframe width="100%" height="560"
+  src="https://www.youtube.com/embed/yFjrov6pvvA"
+  title="Oxford Mathematics Video"
+  frameborder="0" allowfullscreen></iframe>
+</div>
 
 # Bird flocks
 

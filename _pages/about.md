@@ -29,16 +29,16 @@ My PhD research is concerned with building mathematical models for how organisms
 We have a fruitful ongoing collaboration with [Chris Thorogood](https://www.obga.ox.ac.uk/people/chris-thorogood) from the OBG. We are interested in understing floral gigantism in Rafflesia, the World's largest flower. If you are interest in my work, check out this short Youtube video from the Mathematical Institute:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nyx08ftWCkg" 
 title="Oxford Mathematics Video" frameborder="0" allowfullscreen></iframe>
+<br><br>
 
 # Cycling
 
 As an avid fan of cyling, I was eager to collaborate with [Ian Griffiths](https://people.maths.ox.ac.uk/griffit4/) on a project to model and find optimal racing strategies in cycling. Our framework incorporates find the optimal point in stage to attempt a breakaway from the peloton, leveraging information about drafting, energy consumtion and crucially the probability of crashing. You can find a short video highlighting our work here:
-<div style="max-width:315px;">
-  <iframe width="100%" height="560"
-  src="https://www.youtube.com/embed/yFjrov6pvvA"
-  title="Oxford Mathematics Video"
-  frameborder="0" allowfullscreen></iframe>
-</div>
+<iframe width="315" height="560" 
+src="https://www.youtube.com/embed/yFjrov6pvvA"
+title="Oxford Mathematics Video" 
+frameborder="0" allowfullscreen></iframe>
+<br><br>
 
 # Bird flocks
 

@@ -5,11 +5,11 @@
 # prevent it from being included in the site.
 
 main:
-  - title: "Publications"
-    url: /publications/
+  - title: "Research"
+    url: /research/
 
-  - title: "Talks"
-    url: /talks/    
+  #- title: "Talks"
+  #  url: /talks/    
 
   - title: "Teaching"
     url: /teaching/    
@@ -19,6 +19,9 @@ main:
         
   - title: "Blog Posts"
     url: /year-archive/
+
+  - title: "Gallery"
+    url: /gallery/
     
   - title: "CV"
     url: /cv/

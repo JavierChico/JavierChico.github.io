@@ -8,7 +8,7 @@ author_profile: true
 <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between;">
   <a href="{{ '/gallery_academic/' | relative_url }}" style="flex:1 1 30%; text-decoration:none; color:inherit;">
     <div style="width:100%; aspect-ratio:4/3; overflow:hidden; border-radius:10px;">
-      <img src="{{ '/gallery/Rafflesia2.jpeg' | relative_url }}" alt="Academic pictures" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <img src="{{ '/gallery/academic/Rafflesia2.jpeg' | relative_url }}" alt="Academic pictures" style="width:100%; height:100%; object-fit:cover; display:block;">
     </div>
     <div style="text-align:center; margin-top:8px;">Research</div>
   </a>

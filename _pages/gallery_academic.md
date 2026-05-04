@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Academic pictures
-permalink: /academic/
+permalink: /gallery_academic/
 ---
 
 # Academic pictures
@@ -19,7 +19,7 @@ permalink: /academic/
 <div style="margin-bottom:24px;">
 <img src="{{ '/gallery/academic/APS2026Hockey.jpeg' | relative_url }}" alt="APS 2026 (Denver,CO)" style="width:100%; height:auto; display:block;">
   <div style="margin-top:8px; font-size:0.95em; color:#555;">
-    Global Physics Meeting 2026 in Denver. Seeing the Avs with [Ousmane Kodio](https://kodiolab.me.ucsb.edu/) and Derek Moulton.
+    Global Physics Meeting 2026 in Denver. Seeing the Avs with <a href="https://kodiolab.me.ucsb.edu/">Ousmane Kodio</a> and Derek Moulton.
   </div>
 </div>
 
@@ -34,7 +34,7 @@ permalink: /academic/
 <img src="{{ '/gallery/academic/APS2025Prize.jpeg' | relative_url }}" alt="APS 2025" style="width:100%; height:auto; display:block;">
 <img src="{{ '/gallery/academic/APS2025Derek.jpeg' | relative_url }}" alt="APS 2025" style="width:100%; height:auto; display:block;">
   <div style="margin-top:8px; font-size:0.95em; color:#555;">
-    Global Physics Meeting 2025: receiving the [Excellence in Physics Prize](https://engage.aps.org/fip/honors/prizes-awards/ds-program) and enjoying the California sun with Derek.
+    Global Physics Meeting 2025: receiving the <a href="https://engage.aps.org/fip/honors/prizes-awards/ds-program">Excellence in Physics Prize</a> and enjoying the California sun with Derek.
   </div>
 </div>
 

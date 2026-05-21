@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Pseudospectral Fluid Simulator</title>
+  
+  <!-- SEO & Performance Optimization -->
+  <meta name="description" content="An interactive real-time 2D Navier-Stokes fluid simulation solving the quasi-steady Poisson streamfunction and vorticity equations in Fourier space using the pseudospectral method.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="logo-container">
+        <span class="logo-glow"></span>
+        <h1>SpectralFluids<span class="accent">2D</span></h1>
+      </div>
+      <p class="subtitle">Interactive Real-Time Pseudospectral Navier-Stokes Simulator</p>
+    </header>
+
+    <main class="app-layout">
+      
+      <!-- SIMULATION VIEWPORT -->
+      <section class="simulation-section glass-panel">
+        <div class="canvas-wrapper" id="canvas-wrapper">
+          <canvas id="fluid-canvas" width="512" height="512"></canvas>
+          <div class="canvas-instructions" id="canvas-instructions">
+            <p>Click & Drag to Stir the Fluid</p>
+          </div>
+        </div>
+        
+        <!-- FAST VIEWPORT ACTION BUTTONS -->
+        <div class="simulation-actions">
+          <button id="btn-play-pause" class="btn btn-primary" title="Play/Pause Simulation">
+            <svg class="icon icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon icon-pause hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            <span id="txt-play-pause">Pause</span>
+          </button>
+          
+          <button id="btn-step" class="btn btn-secondary" title="Step Simulation 1 Frame">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zm9-12v12h2V6h-2z"/></svg>
+            <span>Step</span>
+          </button>
+          
+          <button id="btn-clear" class="btn btn-danger" title="Clear Vorticity Field">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 4H15.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"/></svg>
+            <span>Clear</span>
+          </button>
+          
+          <button id="btn-reset" class="btn btn-secondary" title="Reset to Initial Turbulence">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            <span>Noise</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SIDEBAR CONTROLS -->
+      <aside class="controls-sidebar">
+        
+        <!-- STATS DASHBOARD -->
+        <section class="glass-panel stats-panel">
+          <h3>Diagnostics & Stats</h3>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="stat-label">FPS</span>
+              <span class="stat-value text-glow" id="stat-fps">60</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Solver time</span>
+              <span class="stat-value" id="stat-time">1.2 ms</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Kinetic Energy (E)</span>
+              <span class="stat-value text-accent" id="stat-energy">0.000</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Enstrophy (&Omega;)</span>
+              <span class="stat-value text-glow-orange" id="stat-enstrophy">0.000</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- PHYSICAL PARAMETERS -->
+        <section class="glass-panel control-group">
+          <h3>Fluid Physics Parameters</h3>
+          
+          <!-- Reynolds Number Slider (Logarithmic) -->
+          <div class="control-item">
+            <div class="slider-header">
+              <label for="slider-reynolds">Reynolds Number (Re)</label>
+              <span class="slider-val" id="val-reynolds">10,000</span>
+            </div>
+            <input type="range" id="slider-reynolds" min="1" max="6" step="0.01" value="4">
+            <div class="slider-ticks">
+              <span>10 (Viscous)</span>
+              <span>1,000,000 (Turbulent)</span>
+            </div>
+          </div>
+
+          <!-- Grid Resolution Selector -->
+          <div class="control-item">
+            <label for="select-resolution">Discretization Precision (N)</label>
+            <div class="segmented-control">
+              <input type="radio" id="res-64" name="resolution" value="64">
+              <label for="res-64">64 &times; 64</label>
+
+              <input type="radio" id="res-128" name="resolution" value="128" checked>
+              <label for="res-128">128 &times; 128</label>
+
+              <input type="radio" id="res-256" name="resolution" value="256">
+              <label for="res-256">256 &times; 256</label>
+            </div>
+          </div>
+
+          <!-- Integration Scheme Selector -->
+          <div class="control-item">
+            <label>Solver Integration Scheme</label>
+            <div class="segmented-control">
+              <input type="radio" id="scheme-rk2" name="integration" value="rk2" checked>
+              <label for="scheme-rk2">RK2 (Accuracy)</label>
+
+              <input type="radio" id="scheme-euler" name="integration" value="euler">
+              <label for="scheme-euler">Euler (Performance)</label>
+            </div>
+          </div>
+
+          <!-- CFL Safety Factor Slider -->
+          <div class="control-item">
+            <div class="slider-header">
+              <label for="slider-cfl">Timestep CFL Scale (dt)</label>
+              <span class="slider-val" id="val-cfl">0.20</span>
+            </div>
+            <input type="range" id="slider-cfl" min="0.05" max="0.80" step="0.05" value="0.20">
+            <div class="slider-ticks">
+              <span>0.05 (Stable)</span>
+              <span>0.80 (Relaxed/Fast)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTERACTION / BRUSH CONTROLS -->
+        <section class="glass-panel control-group">
+          <h3>Stirring & Brush Settings</h3>
+          
+          <!-- Brush Type Selector -->
+          <div class="control-item">
+            <label for="select-brush">Brush Type</label>
+            <select id="select-brush" class="custom-select">
+              <option value="dipole">Stir Fluid (Vortex Dipole)</option>
+              <option value="positive">Inject Vortex (+ CCW)</option>
+              <option value="negative">Inject Vortex (- CW)</option>
+              <option value="noise">Add Fine Noise</option>
+            </select>
+          </div>
+
+          <!-- Brush Size Slider -->
+          <div class="control-item">
+            <div class="slider-header">
+              <label for="slider-brush-size">Vortex Core Radius</label>
+              <span class="slider-val" id="val-brush-size">4%</span>
+            </div>
+            <input type="range" id="slider-brush-size" min="1" max="15" step="0.5" value="4">
+          </div>
+
+          <!-- Brush Strength Slider -->
+          <div class="control-item">
+            <div class="slider-header">
+              <label for="slider-brush-strength">Stirring Strength</label>
+              <span class="slider-val" id="val-brush-strength">1.0</span>
+            </div>
+            <input type="range" id="slider-brush-strength" min="0.1" max="5.0" step="0.1" value="1.0">
+          </div>
+        </section>
+
+        <!-- VISUALIZATION CONTROLS -->
+        <section class="glass-panel control-group">
+          <h3>Visualization & Rendering</h3>
+          
+          <!-- Streamline Toggle -->
+          <div class="control-item switch-item">
+            <label for="toggle-streamlines">Plot Streamlines (Flow Trails)</label>
+            <label class="switch">
+              <input type="checkbox" id="toggle-streamlines" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <!-- Flow Particle Count Slider -->
+          <div class="control-item">
+            <div class="slider-header">
+              <label for="slider-particles">Flow Particle Density</label>
+              <span class="slider-val" id="val-particles">1,200</span>
+            </div>
+            <input type="range" id="slider-particles" min="0" max="2000" step="50" value="1200">
+          </div>
+
+          <!-- Streamfunction Contours Toggle -->
+          <div class="control-item switch-item">
+            <label for="toggle-contours">Plot Streamfunction Contours</label>
+            <label class="switch">
+              <input type="checkbox" id="toggle-contours">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <!-- Color Palette Picker -->
+          <div class="control-item">
+            <label for="select-palette">Color Palette</label>
+            <select id="select-palette" class="custom-select">
+              <option value="neon">Neon Vortex (Cyan & Magenta)</option>
+              <option value="coolwarm" selected>Cool-Warm (Scientific)</option>
+              <option value="magma">Volcanic Magma (Fire)</option>
+              <option value="monochrome">Chroma Monochrome</option>
+            </select>
+          </div>
+
+          <!-- Render Mode -->
+          <div class="control-item">
+            <label for="select-render-mode">Render Variable</label>
+            <select id="select-render-mode" class="custom-select">
+              <option value="vorticity">Vorticity Field (w)</option>
+              <option value="streamfunction">Streamfunction Heightmap (&psi;)</option>
+              <option value="velocity">Velocity Magnitude (|u|)</option>
+            </select>
+          </div>
+        </section>
+
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <p>Built with Pure Vanilla JS & HTML5 Canvas. Solved pseudospectrally using 2D FFT & RK2 Integration.</p>
+    </footer>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
